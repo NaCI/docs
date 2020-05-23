@@ -10,6 +10,6 @@ Kotlin docs
 |[Functions](/kotlin/functions)|How to create and use functions in kotlin language|
 |[Iterable Example](/kotlin/iterable_example)|Example of custom iterable|
 |[Beyond Basics](/kotlin/beyond_basics)|Advanced information about kotlin language|
-|[Generics](/kotlin/generices)|Generic classes and functions in kotlin language|
+|[Generics](/kotlin/generics)|Generic classes and functions in kotlin language|
 |[General Example](/kotlin/general_example)|General example which includes of all the information above|
 |[Simple Game](/kotlin/simple_game_example)|Example of simple game written in Kotlin|
