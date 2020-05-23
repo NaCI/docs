@@ -278,7 +278,7 @@ let spaceship = {
   color: 'silver',
   'Secret Mission' : 'Discover life outside of Earth.'
 };
-console.log(spaceship['Fuel Type’]);
+console.log(spaceship['Fuel Type']);
 console.log(spaceship.homePlanet);
 
 // Delete property from object
