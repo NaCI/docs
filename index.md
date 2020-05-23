@@ -4,8 +4,8 @@ You can use the [editor on GitHub](https://github.com/NaCI/docs/edit/master/inde
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-[Kotlin](https://github.com/NaCI/docs/kotlin.md)
-[Javascript](https://github.com/NaCI/docs/javascript_basics.md)
+[Kotlin](/kotlin)<br>
+[Javascript](https://naci.github.io/javascript_basics)
 
 ### Markdown
 
