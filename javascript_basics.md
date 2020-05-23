@@ -82,7 +82,7 @@ let groceryItem = 'papaya';
 switch (groceryItem) {
   case 'tomato':
   case 'lime':
-    console.log(‘Tomatoes and Limes are $1.49');
+    console.log('Tomatoes and Limes are $1.49');
     break;
   case 'papaya':
     console.log('Papayas are $1.29');
