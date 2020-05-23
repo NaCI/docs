@@ -1,3 +1,5 @@
+[Go to homepage](https://naci.github.io)
+
 Javascript Temelleri
 
 ————————————————————————————————————————
