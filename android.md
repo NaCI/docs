@@ -1,4 +1,4 @@
-[Go to homepage](naci.github.io)
+[Go to homepage](/)
 
 Android docs
 
