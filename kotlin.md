@@ -1,8 +1,9 @@
 [Go to homepage](naci.github.io)
 
 Kotlin docs
+
 |Topic|Description|
-|---|:---:|
+| ------------- |:-------------:|
 |[Basics](/kotlin/basics)|Introduction and basic information about kotlin language|
 |[Loops](/kotlin/loops)|All loops in kotlin language|
 |[Lists](/kotlin/lists)|Lists and Collections in kotlin language|
