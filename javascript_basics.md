@@ -1,5 +1,6 @@
 [Go to homepage](https://naci.github.io)
 
+```javascript
 Javascript Temelleri
 
 ————————————————————————————————————————
@@ -505,3 +506,5 @@ return (
 
     </View>
 )
+```
+
