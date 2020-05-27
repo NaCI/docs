@@ -3,6 +3,10 @@
 ```
 keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android 
 ```
+[Stackoverflow link](https://stackoverflow.com/questions/15727912/sha-1-fingerprint-of-keystore-certificate)
+
+### Automize app signing
+[https://developer.android.com/studio/publish/app-signing#secure-shared-keystore](https://developer.android.com/studio/publish/app-signing#secure-shared-keystore)
 
 ### Add adb to path
 1. Locate sdk path from SDK Manager on Android Studio
