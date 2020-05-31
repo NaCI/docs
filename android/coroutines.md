@@ -4,7 +4,7 @@ Callbacks are a great pattern, however they have a few drawbacks. Code that heav
 
 Kotlin coroutines let you convert callback-based code to sequential code. Code written sequentially is typically easier to read, and can even use language features such as exceptions
 
-> Coroutines by another name 
+#### Coroutines by another name (Same approach on different languages)
 
 The pattern of `async` and `await` in other languages is based on coroutines. If you're familiar with this pattern, the **suspend** keyword is similar to `async`. However in Kotlin, `await()` is implicit when calling a **suspend** function.
 
@@ -32,7 +32,7 @@ When you do this, Room will make your query main-safe and execute it on a backgr
 
 And – that's all you have to do to use coroutines in Room. Pretty nifty
 
-## Coroutines with Retrofit
+## Coroutines with Retrofit
 
 To use suspend functions with Retrofit you have to do two things:
 
@@ -48,7 +48,7 @@ Retrofit will automatically make suspend functions main-safe so you can call the
 
 > Both Room and Retrofit use a custom dispatcher and do not use Dispatchers.IO.<br> Room will run coroutines using the default query and transaction Executor that's configured.<br> Retrofit will create a new Call object under the hood, and call enqueue on it to send the request asynchronously.
 
-## Testing Coroutines
+## Testing Coroutines
 
 The library kotlinx-coroutines-test has the runBlockingTest function that blocks while it calls suspend functions.
 
@@ -69,7 +69,7 @@ Code Sample:
     }
 ```
 
-## Add timeout for operation using **withTimeout**
+### Add timeout for operation using **withTimeout**
 
 withTimeout { ... } is designed to cancel the ongoing operation on timeout, which is only possible if the operation in question is cancellable.
 
