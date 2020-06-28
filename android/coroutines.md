@@ -47,11 +47,11 @@ In the Service API interface:
 Retrofit will automatically make suspend functions main-safe so you can call them directly from Dispatchers.Main.
 
 > Both Room and Retrofit make suspending functions main-safe.<br>
-> It's safe to call these suspend funs from Dispatchers.Main, even though they fetch from the network and write to the database.<br>
+It's safe to call these suspend funs from Dispatchers.Main, even though they fetch from the network and write to the database.<br>
 
 > Both Room and Retrofit use a custom dispatcher and do not use Dispatchers.IO.<br>
-> Room will run coroutines using the default query and transaction Executor that's configured.<br>
-> Retrofit will create a new Call object under the hood, and call enqueue on it to send the request asynchronously.
+Room will run coroutines using the default query and transaction Executor that's configured.<br>
+Retrofit will create a new Call object under the hood, and call enqueue on it to send the request asynchronously.
 
 ## Testing Coroutines
 
@@ -94,9 +94,9 @@ withTimeout(1300L) {
 It produces the following output
 
 > I'm sleeping 0 ...<br>
-> I'm sleeping 1 ...<br>
-> I'm sleeping 2 ...<br>
-> Exception in thread "main" kotlinx.coroutines.TimeoutCancellationException: Timed out waiting for 1300 ms
+I'm sleeping 1 ...<br>
+I'm sleeping 2 ...<br>
+Exception in thread "main" kotlinx.coroutines.TimeoutCancellationException: Timed out waiting for 1300 ms
 
 **withTimeoutOrNull** function that is similar to **withTimeout** but returns null on timeout instead of throwing an exception
 
@@ -114,9 +114,9 @@ println("Result is $result")
 It produces the following output
 
 > I'm sleeping 0 ...<br>
-> I'm sleeping 1 ...<br>
-> I'm sleeping 2 ...<br>
-> Result is null
+I'm sleeping 1 ...<br>
+I'm sleeping 2 ...<br>
+Result is null
 
 **REFERENCES**
 : [codelabs.developers.google.com/codelabs/kotlin-coroutines](codelabs.developers.google.com/codelabs/kotlin-coroutines)
