@@ -292,7 +292,7 @@ Port belirtmek için -P parametresi kullanılır.
 
 > `cat out07.log | grep com.google.android.apps.plus | awk -F\| '{ print $2 }' | sort | uniq | wc -l`
 
-dosyayı ekrana yazdır | kelimeyi satırlarda ara | -F den sonra ayıraç tanımlanır print &2 ise 2.sütun demek | sırala | arka arkaya aynı olanları çıkar | satır sayısı |
+> dosyayı ekrana yazdır || kelimeyi satırlarda ara || -F den sonra ayıraç tanımlanır print &2 ise 2.sütun demek || sırala || arka arkaya aynı olanları çıkar || satır sayısı
 
 > `head -{satır_sayısı} {dosya_yolu}` <br> // dosyanın ilk n satırını okur
 
@@ -369,112 +369,123 @@ Veritabanında trigger oluşturma
 
 ---
 
-Uzak Sunucudaki Dosyayı Mount Etme
+### Uzak Sunucudaki Dosyayı Mount Etme
 
-- sshfs (user_name)@(ip):/(dosya yolu) (bizdeki boş klasör)
+> `sshfs {user_name}@{ip}:/{uzak_dosya_yolu} {local_dosya_dizini}`
 
---------------------------------------------
+#### Unmount Etme
 
-Unmount Etme
+> `df -h` <br>
+> `sudo unmount -f {dosya_yolu}`
 
-- df -h
-- sudo unmount -f (dosya yolu)
+---
 
-****************************************************************************
+### APACHE TOMCAT
 
-APACHE TOMCAT
+START TOMCAT
+> `cd $CATALINA_TOMCAT_HOME/bin` <br>
+> `./startup.sh`
 
-- cd $CATALINA_TOMCAT_HOME/bin
-- ./startup.sh (START TOMCAT)
+SHUTDOWN TOMCAT
+> `cd $CATALINA_TOMCAT_HOME/bin` <br>
+> `./shutdown.sh`
 
-- cd $CATALINA_TOMCAT_HOME/bin
-- ./shutdown.sh (SHUTDOWN TOMCAT)
+Webapps klasörünün altındaki *.war* uzantılı dosyalar çalışmaya başlar, isimlerine göre istek yapılabilir.
 
-- webapps klasörünün altındaki .war uzantılı dosyalar çalışmaya başlar, isimlerine göre istek yapılabilir.
+Request example :
+> `curl -d "{parameters ex :'func=getConf'}" {server_ip}:{port_no: default 8080 or 80}/{project_or_war_file_name}/{class_name}`
 
-- request example : curl -d "(parameters ex :'func=getConf')" (server_ip):(port_no: default 8080 or 80)/(project or war file name)/(class name)
+---
 
-****************************************************************************
+### RUN JAVA PROGRAM
 
-RUN JAVA PROGRAM
+> `java {min_memory} {max_memory} -classpath {jar_file} :{nesessary_libraries_folder} {Main_Class_Name} 2>>{Error_Log_File} >> {Log_File} {parameter}`
 
-- java -Xms1G -Xmx12G -classpath StatsMob_Parser_out07.jar:./lib/* com.argeus.packagelistparser.Main 2>>StatsMob_Parser_out07.err >> StatsMob_Parser_out07.out param1
+Örnek kullanımlar:
+> `java -Xms1G -Xmx12G -classpath StatsMob_Parser_out07.jar:./lib/* com.argeus.packagelistparser.Main 2>>StatsMob_Parser_out07.err >> StatsMob_Parser_out07.out param1`
 
-- java (min_memory) (max_memory) -classpath (jar file) :(nesessary libraries folder) (Main Class Name) 2>>(Error Log File) >> (Log File) (parameter)
-- java -jar DBChanger.jar 2>>hata.txt >> normal.txt param1 param2 param3
+> `java -jar DBChanger.jar 2>>hata.txt >> normal.txt param1 param2 param3`
 
-****************************************************************************
+---
 
-CLEAR COMMAND LINE HISTORY
+### CLEAR COMMAND LINE HISTORY
 
-- history -c => Delete all history
+> `history -c` => Delete all history
 
-- history -d (line of code ex: 5) => Delete command at specific line
+> `history -d (line of code ex: 5)` => Delete command at specific line
 
-- history -w => rewrite on to old data
+> `history -w` => rewrite on to old data
 
-****************************************************************************
+---
 
-MERGE PDF FILES IN ONE
+### MERGE PDF FILES IN ONE
 
-- pdfunite in-1.pdf in-2.pdf in-n.pdf out.pdf
+> `pdfunite in-1.pdf in-2.pdf in-n.pdf out.pdf`
 
-****************************************************************************
+---
 
-ANDROID GET PACKAGE LIST OF DEVICE
+### ANDROID GET PACKAGE LIST OF DEVICE
 
-adb shell ile cihazın komut satırına düşülür ardından ilgili komut çalıştırılır.
+`adb shell` ile cihazın komut satırına düşülür ardından ilgili komut çalıştırılır.
 
-- pm list packages
+> `pm list packages`
 
-****************************************************************************
+---
 
-ANDROID GET FINGERPRINT OF DEBUG KEY
+### ANDROID GET FINGERPRINT OF DEBUG KEY
 
-- keytool -list -v -keystore ~/.android/debug.keystore (path of keystore)
-- keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey (alias name)
+> `keytool -list -v -keystore {path_of_keystore}`
 
-****************************************************************************
+Örnek kullanım:
+> `keytool -list -v -keystore ~/.android/debug.keystore`
 
-BUILD JAVA PROJECT WITH MAVEN
+> `keytool -list -v -keystore ~/.android/debug.keystore -alias {alias_name}`
 
-- mvn package
+Örnek kullanım:
+> `keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey`
 
-****************************************************************************
+---
 
-ANDROID PRESENT UNKOWN DEVICE TO ADB
+### BUILD JAVA PROJECT WITH MAVEN
 
-- nano /etc/udev/rules.d/51-android.rules
-- add new vendor to file (SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="plugdev")
+> `mvn package`
 
-****************************************************************************
+---
 
-SOCKS PROXY TANIMLAMA - SSH ÜZERİNDEN
+### ANDROID PRESENT UNKOWN DEVICE TO ADB
 
-- ssh -D 8080(port) server_ip_adresi
-- ardından firefoxta preferences->advanced->network->settings tabında manuel proxy SOCKS host 127.0.0.1 port 8080(port) atanır
-- port çakışması olması durumunda farklı port denenmeli
+> `nano /etc/udev/rules.d/51-android.rules` <br>
+> add new vendor to file (SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="plugdev")
 
-****************************************************************************
+---
 
-LINUX SİSTEMDE DOSYA ARAMA
+### SOCKS PROXY TANIMLAMA - SSH ÜZERİNDEN
 
-- find {aranılacak dizin} -name {aranılacak dosya adı - regular exp kabul ediyor -}
+> `ssh -D 8080(port) {server_ip_adresi}` <br>
+> ardından firefoxta preferences->advanced->network->settings tabında manuel proxy SOCKS host 127.0.0.1 port 8080(port) atanır <br>
+> port çakışması olması durumunda farklı port denenmeli
 
-Ornek : find /samanlik/ -name "topluigne.txt"
+---
 
-****************************************************************************
+### LINUX SİSTEMDE DOSYA ARAMA
 
-JAVA UYGULAMALARININ BİLGİLERİNİ ÖĞRENME
+> `find {aranılacak_dizin} -name {aranılacak_dosya_adı - regular exp kabul ediyor -}`
 
-- jinfo {process_id}
+Ornek Kullanım:
+> `find /samanlik/ -name "topluigne.txt"`
 
-****************************************************************************
+---
 
-AÇIK PORTLARI LİSTELEME
+### JAVA UYGULAMALARININ BİLGİLERİNİ ÖĞRENME
 
-- sudo netstat -tulpn
+> `jinfo {process_id}`
 
-****************************************************************************
+---
+
+### AÇIK PORTLARI LİSTELEME
+
+> `sudo netstat -tulpn`
+
+---
 
 **< [Go to homepage](/)**
