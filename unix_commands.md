@@ -115,7 +115,7 @@ x = xpand / c = compress
 
 ### Ağdaki Cihazları ve Portları Tarama
 
-> `nmap -n 192.168.1.* -p 5555` (ip aralığı verilir, -p port demektir -web erişimi olan cihazlarda genelde 80 portu açıktır-)
+> `nmap -n 192.168.1.* -p 5555` <br> (ip aralığı verilir, -p port demektir -web erişimi olan cihazlarda genelde 80 portu açıktır-)
 
 > `nmap -n 192.168.1.* -p 5555 | grep open -B 4`
 
@@ -178,7 +178,7 @@ Durdurulmuş süreçleri ekrana geri getirir
 
 ### Android Cihaz Bilgileri Görme
 
-Usb ile bağlı bulunan cihazın komut satırına girilir ve orada "getprop" komutu çalıştırılır.
+Usb ile bağlı bulunan cihazın komut satırına girilir ve orada `getprop` komutu çalıştırılır.
 
 > `adb shell`
 
@@ -191,14 +191,12 @@ ardından
 
 Mesela bir 5480 kb lık mp3 dosyamız olsun (test.mp3).Bu dosyamızı 1 megabyte’lık parçalara bölelim.
 
-b : byte
-
-1 : dosyamız 1 megabyte lık dosyalara böler..yada (2-3-4) dosya büyüklüğüne göre.
-
-m: megabyte
-
 Örnek :
 > `split -b1m test.mp3 test.mp3`
+
+> **b** : byte <br>
+> **1** : dosyamız 1 megabyte lık dosyalara böler..yada (2-3-4) dosya büyüklüğüne göre. <br>
+> **m** : megabyte
 
 İşlem sonunda Dosyalarımız test.mp3as test.mp3ab....şeklinde parçalanacaktır.
 
@@ -245,11 +243,11 @@ Bu dosyayı tekrar birleştirmek içinse --> `cat` komutunu kullanabiliriz
 
 ### Detaylı Grep Kullanımı
 
-> `grep {aranacak_kelime} -A 30 -B 10` (A: after B: before bulunan satırdan 10 öncesini ve 30 sonrasını gösterir)
+> `grep {aranacak_kelime} -A 30 -B 10`<br> (A: after B: before bulunan satırdan 10 öncesini ve 30 sonrasını gösterir)
 
 ---
 
-### Apache Start/Stop
+### Apache Start/Stop
 
 > `sudo /etc/init.d/apache2 stop (start)`
 
@@ -261,7 +259,7 @@ Bu dosyayı tekrar birleştirmek içinse --> `cat` komutunu kullanabiliriz
 
 ---
 
-### KULLANIMDAKİ PORTLARI LİSTELEME
+### Kullanımdaki Portları LİSTELEME
 
 > `sudo netstat -tulpn`
 
@@ -269,90 +267,107 @@ Bu dosyayı tekrar birleştirmek içinse --> `cat` komutunu kullanabiliriz
 
 ### CURL ile HTTP İstekte Bulunma
 
-> `curl --data '{"(key)":(value)}' --referer '{value}' http://127.0.0.1:8080/(class_adı)` //post verileri ile adresten istekte bulunma
+> `curl --data '{"(key)":(value)}' --referer '{value}' http://127.0.0.1:8080/(class_adı)` <br> //post verileri ile adresten istekte bulunma
 
 > `curl -d "key=value&id=1" --referer "www.google.com" http://127.0.0.1:8080/ServletName/ClassName`
 
-> `curl -vlkL https://127.0.0.1:8443 --ciphers DHE-RSA-AES256-SHA` //sertifika olmadığı halde; ssl bağlantı üzerinden istekte bulunma
+> `curl -vlkL https://127.0.0.1:8443 --ciphers DHE-RSA-AES256-SHA` <br> //sertifika olmadığı halde; ssl bağlantı üzerinden istekte bulunma
 
-> `curl -i -X {GET|POST|PUT|DELETE} -H'Content-Type: application/json' -H'Accept: application/json' -d '{"i_app": "12"}' http://127.0.0.1:8080`
+> `curl -i -X {GET|POST|PUT|DELETE} -H'Content-Type: application/json' -H'Accept: application/json' -d '{"i_app": "12"}' http://127.0.0.1:8080` <br>
 // -X ile istek tipini belirliyoruz. -H ile headerları belirliyoruz, Content-Type : Gönderilecek parametrelerin tipi, Accept : Geri Dönecek Veri Tipi
 
 ---
 
-SSH ile Dosya Kopyalama
+### SSH ile Dosya Kopyalama
 
-- scp (kopyalanacak dosya yolu) (uzak sunucu kullanıcısı)@(uzak sunucu ip'si):(uzak sunucu kopyalama dosya yolu)
+> `scp {kopyalanacak_dosya_yolu} {uzak_sunucu_kullanıcı_adı}@{uzak_sunucu_ip}:{uzak_sunucu_kopyalama_dosya_yolu}`
 
-- klasör kopyalamak için -r parametresi kullanılır.
+Klasör kopyalamak için -r parametresi kullanılır.
 
-- port belirtmek için -P parametresi kullanılır.
+Port belirtmek için -P parametresi kullanılır.
 
-****************************************************************************
+---
 
-Dosya İçeriği Okuma
+### Dosya İçeriği Okuma
 
-- cat out07.log | grep com.google.android.apps.plus | awk -F\| '{ print $2 }' | sort | uniq | wc -l
+> `cat out07.log | grep com.google.android.apps.plus | awk -F\| '{ print $2 }' | sort | uniq | wc -l`
+
 dosyayı ekrana yazdır | kelimeyi satırlarda ara | -F den sonra ayıraç tanımlanır print &2 ise 2.sütun demek | sırala | arka arkaya aynı olanları çıkar | satır sayısı |
 
-- head -(satır sayısı) (dosya yolu) /* dosyanın ilk n satırını okur */
+> `head -{satır_sayısı} {dosya_yolu}` <br> // dosyanın ilk n satırını okur
 
-- tail -(satır sayısı) (dosya yolu) /* dosyanın son n satırını okur */
+> `tail -{satır_sayısı} {dosya_yolu}` <br> // dosyanın son n satırını okur
 
-- tail -F (dosya yolu) /* dosyayı güncel takip eder */
+> `tail -F {dosya_yolu}` <br> // dosyayı güncel takip eder
 
-- awk -F\| '{ if($2==23) print $0"\n\n"}' (dosya yolu) /* 2. sütun 23 olan bütün satırları bastır */
+> `awk -F\| '{ if($2==23) print $0"\n\n"}' {dosya_yolu}` <br> // 2. sütun 23 olan bütün satırları bastır
 
-- wc -l <file> /* dosyanın satır sayısını gösterir */
+> `wc -l {dosya_yolu}` <br> // dosyanın satır sayısını gösterir
 
-- grep -w "pattern" -c file /* dosyadaki belli parametreyi içeren satır sayısını gösterir. -c => satır sayısı, -w => girilecek kelime */
+> `grep -w "pattern" -c {dosya_yolu}` <br> // dosyadaki belli parametreyi içeren satır sayısını gösterir. -c => satır sayısı, -w => girilecek kelime
 
--grep -i ali /* büyük küçük harf farketmez (insensitive) */
+> `grep -i ali` <br> // büyük küçük harf farketmez (insensitive)
 
--grep 'ali\|veli' /* ali veya veli geçen satırları arar */
+> `grep 'ali\|veli'` <br> // ali veya veli geçen satırları arar
 
-****************************************************************************
+---
 
-Komutun Durmasını Engelleme
+### Komutun Durmasını Engelleme
 
-- nohup (komut adı)
+> `nohup {komut_adı}`
 
-****************************************************************************
+---
 
-MYSQL KOMUTLARI
+### MYSQL KOMUTLARI
 
-- mysqldump -u(user_name) -p (veritabanı_adı) > ./yedek.sql => veritabanı yedeği alma
+Veritabanı yedeği alma
+> `mysqldump -u{user_name} -p {veritabanı_adı} > ./yedek.sql`
 
-- mysql -u(user_name) -p (veritabanı_adı) < ./yedek.sql => veritabanı geri yükleme
+Veritabanı geri yükleme
+> `mysql -u{user_name} -p {veritabanı_adı} < ./yedek.sql`
 
-- mysql -u(user_name) -p(password) => mysql giriş
+Mysql giriş
+> `mysql -u{user_name} -p{password}`
 
-- show processlist => Bağlantıları Görme
+Bağlantıları Görme
+> `show processlist`
 
-- SELECT * FROM INFORMATION_SCHEMA.PROCESSLIST => Bağlantıları Görme Detaylı
+Bağlantıları Görme Detaylı
+> `SELECT * FROM INFORMATION_SCHEMA.PROCESSLIST`
 
-- show variables => mysql değişkenlerini listeler
+Mysql değişkenlerini listeleme
+> `show variables`
 
-- show variables like "max_connections"; => spesifik bir değişkeni görme
+Spesifik bir değişkeni görme
+> `show variables like "max_connections";`
 
-- set global max_connections = 200; => değişken atama (bu değişiklik mysql yeniden açıldığında unutulur. Kalıcı değişiklik için /etc/mysqld/my.cnf dosyasının içindeki max_connections satırı değiştirilmelidir)
+Değişken atama
+> `set global max_connections = 200;`
 
-- use (veritabanı_adı) => database seçme
+Bu değişiklik mysql yeniden açıldığında unutulur. Kalıcı değişiklik için /etc/mysqld/my.cnf dosyasının içindeki max_connections satırı değiştirilmelidir
 
-- describe (tablo_adı) => tablo yapısını görme
+Database seçme
+> `use {veritabanı_adı}`
 
-- show databases => mysqldeki tüm databaseleri görme
+Tablo yapısını görme
+> `describe {tablo_adı}`
 
-- show tables => veritabanındaki tüm tabloları görme
+Mysqldeki tüm databaseleri görme
+> `show databases`
 
-- drop databse (veritabanı_adı) => veritabanı silme
+Veritabanındaki tüm tabloları görme
+> `show tables`
 
-- CREATE DATABASE (veritabanı_adı) DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci => yeni veritabanı oluşturma utf-8 li
+Veritabanı silme
+> `drop databse {veritabanı_adı}`
 
-- CREATE TRIGGER {trigger_adı} AFTER INSERT ON {etkinmiş tablo adı}
-FOR EACH ROW INSERT INTO {etkilenecek tablo adı}(`id`,`type`) VALUES(NEW.i_episode, 2); => veritabanında trigger oluşturma
+Yeni veritabanı oluşturma (utf-8 li)
+> `CREATE DATABASE {veritabanı_adı} DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci`
 
-****************************************************************************
+Veritabanında trigger oluşturma
+> `CREATE TRIGGER {trigger_adı} AFTER INSERT ON {etkiyi_başlatan_tablo_adı} FOR EACH ROW INSERT INTO {etkilenecek_tablo_adı}(`id`,`type`) VALUES(NEW.i_episode, 2);`
+
+---
 
 Uzak Sunucudaki Dosyayı Mount Etme
 
