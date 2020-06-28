@@ -1,6 +1,6 @@
-[Go to homepage](https://naci.github.io)
+# Important Unix/Shell commands
 
-## Şu ana kadar kullandığım ve önemli bulduğum linux komutlarını paylaşmak istiyorum :
+## Şu ana kadar kullandığım ve önemli bulduğum linux komutlarının listesi
 
 ****************************************************************************
 sudo su : root şifresi tanımlama
@@ -470,3 +470,5 @@ AÇIK PORTLARI LİSTELEME
 - sudo netstat -tulpn
 
 ****************************************************************************
+
+### [Go to homepage](/)

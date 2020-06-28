@@ -1,8 +1,6 @@
-[Go to homepage](https://naci.github.io)
+# Javascipt Temelleri
 
 ```javascript
-Javascript Temelleri
-
 ————————————————————————————————————————
 In JavaScript, there are seven fundamental data types
 “ Number (4, 23.42)
@@ -508,3 +506,4 @@ return (
 )
 ```
 
+### [Go to homepage](/)

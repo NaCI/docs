@@ -1,4 +1,4 @@
-### Welcome to NaCI's documentation page
+# Welcome to NaCI's documentation page
 
 In the table below there are some tutorials or documentations about several topics of development.
 

@@ -1,4 +1,4 @@
-[Go to Kotlin section](../kotlin)
+# Kotlin Functions
 
 ```kotlin
 /**
@@ -201,5 +201,7 @@ val isEven: (Int) -> Boolean = { it.rem(2) == 0 }
 val isOdd: Int.() -> Boolean = { this.rem(2) == 0 }
 ```
 
-### REFERENCES
-* https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011
+**REFERENCES**
+: [https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011)
+
+### [Go back to Kotlin section](../kotlin)

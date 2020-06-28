@@ -1,4 +1,4 @@
-[Go to Kotlin section](../kotlin)
+# General Example -which contains everyting that i've learned-
 
 ```kotlin
 // AN COMPLETE EXAMPLE
@@ -59,3 +59,5 @@ while(myBook.weight > 0) {
       puppy.playWithBook(myBook)
 }
 ```
+
+### [Go back to Kotlin section](../kotlin)

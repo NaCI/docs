@@ -1,4 +1,4 @@
-[Go to Kotlin section](../kotlin)
+# Kotlin Lists
 
 ```kotlin
 /**
@@ -512,13 +512,15 @@ println(list.distinct()) // [a, A, b, B]
 println(list.distinctBy { it.toUpperCase() }) // [a, b]
 ```
 
-### REFERENCES
-* https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011
-* https://kotlinlang.org/docs/reference/collections-overview.html
-* https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-triple/
-* https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/associate-by.html
-* https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/join-to-string.html
-* https://bezkoder.com/kotlin-list-mutable-list/
-* https://bezkoder.com/kotlin-fold/
-* https://dzone.com/articles/learning-kotlin-return-when
-* http://zetcode.com/kotlin/lists/
+**REFERENCES**
+: [https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011)
+: [https://kotlinlang.org/docs/reference/collections-overview.html](https://kotlinlang.org/docs/reference/collections-overview.html)
+: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-triple/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-triple/)
+: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/associate-by.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/associate-by.html)
+: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/join-to-string.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/join-to-string.html)
+: [https://bezkoder.com/kotlin-list-mutable-list/](https://bezkoder.com/kotlin-list-mutable-list/)
+: [https://bezkoder.com/kotlin-fold/](https://bezkoder.com/kotlin-fold/)
+: [https://dzone.com/articles/learning-kotlin-return-when](https://dzone.com/articles/learning-kotlin-return-when)
+: [http://zetcode.com/kotlin/lists/](http://zetcode.com/kotlin/lists/)
+
+### [Go back to Kotlin section](../kotlin)

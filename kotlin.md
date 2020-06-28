@@ -1,6 +1,4 @@
-[Go to homepage](https://naci.github.io)
-
-Kotlin docs
+# Kotlin Docs
 
 |Topic|Description|
 | ------------- |:-------------:|
@@ -13,3 +11,5 @@ Kotlin docs
 |[Generics](/kotlin/generics)|Generic classes and functions in kotlin language|
 |[General Example](/kotlin/general_example)|General example which includes of all the information above|
 |[Simple Game](/kotlin/simple_game_example)|Example of simple game written in Kotlin|
+
+### [Go to homepage](/)

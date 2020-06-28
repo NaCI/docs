@@ -1,4 +1,4 @@
-[Go to Kotlin section](../kotlin)
+# Kotlin Example of Custom Iterable
 
 ```kotlin
 /**
@@ -64,3 +64,5 @@ fun iterateOverDateRange(firstDate: MyDate, secondDate: MyDate, handler: (MyDate
     }
 }
 ```
+
+### [Go back to Kotlin section](../kotlin)

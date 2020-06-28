@@ -1,4 +1,4 @@
-[Go to Kotlin section](../kotlin)
+# Kotlin Basics
 
 ```kotlin
 /**
@@ -169,10 +169,10 @@ import java.util.Random as JRandom
 */
 ```
 
-/**
-* REFERENCES
-* https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011
-* https://kotlinlang.org/docs/reference/control-flow.html
-* https://bezkoder.com/kotlin-list-mutable-list/
-* https://dzone.com/articles/learning-kotlin-return-when
-*/
+**REFERENCES**
+: [https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011)
+: [https://kotlinlang.org/docs/reference/control-flow.html](https://kotlinlang.org/docs/reference/control-flow.html)
+: [https://bezkoder.com/kotlin-list-mutable-list/](https://bezkoder.com/kotlin-list-mutable-list/)
+: [https://dzone.com/articles/learning-kotlin-return-when](https://dzone.com/articles/learning-kotlin-return-when)
+
+### [Go back to Kotlin section](../kotlin)

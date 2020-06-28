@@ -1,6 +1,5 @@
-[Go to Android section](../android)
-
 # Tutorial to implement App Center and Fastlane scripts to Android Project
+
 1. First go to https://appcenter.ms/ and create an account
 
 2. Follow sdk setup steps and implement app center to android project  
@@ -19,16 +18,19 @@
 
 3. When we launch the app, we should be able see current user on Analytics tab on the AppCenter console.
 4. We can manage beta test versions via Distribute tab on the AppCenter console. Advantages and disadvantages are listed below:  
+
   - Any build_type is acceptable.
   - Invitation to testers could be made on Groups tab.
   - Different package names are acceptable.
   - Unfortunately App Bundle's are not welcome here.
   
-### Now its time to implement fastlane  
+## Now its time to implement fastlane
+
 Refer to this [link](https://docs.fastlane.tools/getting-started/android/setup/)
 
 1. Run the commands below to download and setup Fastlane to project
-    ```
+
+    ```shell
     xcode-select --install
 
     #Using RubyGems
@@ -70,7 +72,8 @@ Refer to this [link](https://docs.fastlane.tools/getting-started/android/setup/)
     > end  
 
     - Define flavor based variables
-    ```
+
+    ```ruby
     before_all do |lane, options|
          if options[:flavor] == "flavorTest"
             ENV["APP_IDENTIFIER"] = "com.example.naci.test"
@@ -80,8 +83,9 @@ Refer to this [link](https://docs.fastlane.tools/getting-started/android/setup/)
     end
     ```
 
-    - Define basic action  
-    ```
+    - Define basic action
+
+    ```ruby
     desc "Generate Production Release Apk"
     lane :generate_my_apk do
         gradle(
@@ -94,7 +98,8 @@ Refer to this [link](https://docs.fastlane.tools/getting-started/android/setup/)
     ```
 
     - Define action with options
-    ```
+
+    ```ruby
     desc "Generate Apk"
     lane :generate_apk do |options|
       UI.message("\n\n\n=====================================\n Generate "+ options[:flavor] +" "+ options[:build_type] +" apk \n=====================================")
@@ -114,7 +119,8 @@ Refer to this [link](https://docs.fastlane.tools/getting-started/android/setup/)
     `APPCENTER_API_TOKEN=tokenvalue123`  
 
     Read file from Fastfile
-    ```
+
+    ```ruby
     #load variables from .env file in the root if it exists
     if File.exist?('../.env')
          open('../.env', 'r').readlines.each do |l|
@@ -126,7 +132,8 @@ Refer to this [link](https://docs.fastlane.tools/getting-started/android/setup/)
 
 6. Some important fastlane actions
     - Define generate_apk action
-    ```
+
+    ```ruby
     desc "Generate Apk"
     lane :generate_apk do |options|
 
@@ -137,10 +144,12 @@ Refer to this [link](https://docs.fastlane.tools/getting-started/android/setup/)
 
       end
     ```
+
     > gradle action may give errors and didn't run on some cases. You need to download and use JDK 8 inorder to complete<br>Reference [link](https://github.com/google/dagger/issues/1339)
 
     - Define app center action
-    ```
+
+    ```ruby
     desc "Fetch Version Number"
     lane :fetch_version do
         UI.message("\n\n\n=====================================\n Fetch latest version: \n=====================================")
@@ -151,11 +160,12 @@ Refer to this [link](https://docs.fastlane.tools/getting-started/android/setup/)
         )
         UI.message(version.to_s)
     end
-    #usage => fastlane fetch_version 
+    #usage => fastlane fetch_version
     ```
 
     - App center distribute action
-    ```
+
+    ```ruby
     desc "App Center Upload"
     lane :app_center_upload do
         appcenter_upload(
@@ -170,7 +180,7 @@ Refer to this [link](https://docs.fastlane.tools/getting-started/android/setup/)
                 notify_testers: true
         )
     end
-    #usage => fastlane app_center_upload 
+    #usage => fastlane app_center_upload
     ```
 
 Thats all. We configured app center and fastlane successfully. Have a nice day :whale2: :fireworks:
@@ -178,4 +188,7 @@ Thats all. We configured app center and fastlane successfully. Have a nice day :
 Check the [link](https://github.com/microsoft/fastlane-plugin-appcenter/blob/master/fastlane/Fastfile) to see all the examples for app center
 
 ## To Show on Code, Refer to
+
 [Repository link](https://github.com/NaCI/DeploymentTestApp)
+
+### [Go back to Android section](../android)

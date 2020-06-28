@@ -1,4 +1,4 @@
-[Go to Kotlin section](../kotlin)
+# Kotlin Beyond Basics
 
 ```kotlin
 /**
@@ -328,7 +328,8 @@ val (words, lines) = listOf("a", "a b", "c", "d e").partitionTo(ArrayList(), Arr
 val (letters, other) = setOf('a', '%', 'r', '}').partitionTo(HashSet(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z' }
 ```
 
+**REFERENCES**
+: [https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011)
+: [https://winterbe.com/posts/2018/07/23/kotlin-sequence-tutorial/](https://winterbe.com/posts/2018/07/23/kotlin-sequence-tutorial/)
 
-### REFERENCES
-* https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011
-* https://winterbe.com/posts/2018/07/23/kotlin-sequence-tutorial/
+### [Go back to Kotlin section](../kotlin)

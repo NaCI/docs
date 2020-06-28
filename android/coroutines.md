@@ -1,10 +1,12 @@
+# Coroutines in Android Project
+
 ## Difference between callback pattern
 
 Callbacks are a great pattern, however they have a few drawbacks. Code that heavily uses callbacks can become hard to read and harder to reason about. In addition, callbacks don't allow the use of some language features, such as exceptions.
 
 Kotlin coroutines let you convert callback-based code to sequential code. Code written sequentially is typically easier to read, and can even use language features such as exceptions
 
-#### Coroutines by another name (Same approach on different languages)
+### Coroutines by another name (Same approach on different languages)
 
 The pattern of `async` and `await` in other languages is based on coroutines. If you're familiar with this pattern, the **suspend** keyword is similar to `async`. However in Kotlin, `await()` is implicit when calling a **suspend** function.
 
@@ -40,21 +42,23 @@ In the Service API interface:
 
 1. Add a suspend modifier to the function
 
-2. Remove the Call wrapper from the return type. Here we're returning String, but you could return complex json-backed type as well. If you still wanted to provide access to Retrofit's full Result, you can return Result<String> instead of String from the suspend function.
+2. Remove the Call wrapper from the return type. Here we're returning String, but you could return complex json-backed type as well. If you still wanted to provide access to Retrofit's full Result, you can return `Result<String>` instead of String from the suspend function.
 
 Retrofit will automatically make suspend functions main-safe so you can call them directly from Dispatchers.Main.
 
-> Both Room and Retrofit make suspending functions main-safe.<br> It's safe to call these suspend funs from Dispatchers.Main, even though they fetch from the network and write to the database.
-
-> Both Room and Retrofit use a custom dispatcher and do not use Dispatchers.IO.<br> Room will run coroutines using the default query and transaction Executor that's configured.<br> Retrofit will create a new Call object under the hood, and call enqueue on it to send the request asynchronously.
+> Both Room and Retrofit make suspending functions main-safe.
+> It's safe to call these suspend funs from Dispatchers.Main, even though they fetch from the network and write to the database.<br>
+> Both Room and Retrofit use a custom dispatcher and do not use Dispatchers.IO.
+> Room will run coroutines using the default query and transaction Executor that's configured.
+> Retrofit will create a new Call object under the hood, and call enqueue on it to send the request asynchronously.
 
 ## Testing Coroutines
 
 The library kotlinx-coroutines-test has the runBlockingTest function that blocks while it calls suspend functions.
 
-With that method we are able to provide correct test results.(With synchronous call of suspend function, test result will be wait till the IO operation like service call or database operation ends) 
+With that method we are able to provide correct test results.(With synchronous call of suspend function, test result will be wait till the IO operation like service call or database operation ends)
 
-Code Sample: 
+Code Sample:
 
 ```kotlin
 @Test
@@ -88,7 +92,10 @@ withTimeout(1300L) {
 
 It produces the following output
 
-> I'm sleeping 0 ...<br>I'm sleeping 1 ...<br>I'm sleeping 2 ...<br>Exception in thread "main" kotlinx.coroutines.TimeoutCancellationException: Timed out waiting for 1300 ms
+> I'm sleeping 0 ...
+> I'm sleeping 1 ...
+> I'm sleeping 2 ...
+> Exception in thread "main" kotlinx.coroutines.TimeoutCancellationException: Timed out waiting for 1300 ms
 
 **withTimeoutOrNull** function that is similar to **withTimeout** but returns null on timeout instead of throwing an exception
 
@@ -105,8 +112,13 @@ println("Result is $result")
 
 It produces the following output
 
-> I'm sleeping 0 ...<br>I'm sleeping 1 ...<br>I'm sleeping 2 ...<br>Result is null
+> I'm sleeping 0 ...
+> I'm sleeping 1 ...
+> I'm sleeping 2 ...
+> Result is null
 
 **REFERENCES**
 : [codelabs.developers.google.com/codelabs/kotlin-coroutines](codelabs.developers.google.com/codelabs/kotlin-coroutines)
 : [https://kotlinlang.org/docs/reference/coroutines/cancellation-and-timeouts.html](https://kotlinlang.org/docs/reference/coroutines/cancellation-and-timeouts.html)
+
+### [Go back to Android section](../android)

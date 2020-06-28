@@ -1,5 +1,4 @@
-[Go to Kotlin section](../kotlin)
-
+# Kotlin Loops
 
 ```kotlin
 /**
@@ -53,8 +52,9 @@ do {
 } while (!fortune.contains("Take it easy"))
 ```
 
+**REFERENCES**
+: <https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011>
+: <https://kotlinlang.org/docs/reference/control-flow.html>
+: <https://dzone.com/articles/learning-kotlin-return-when>
 
-### REFERENCES
-* https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011
-* https://kotlinlang.org/docs/reference/control-flow.html
-* https://dzone.com/articles/learning-kotlin-return-when
+### [Go back to Kotlin section](../kotlin)
