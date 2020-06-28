@@ -2,45 +2,37 @@
 
 ## Şu ana kadar kullandığım ve önemli bulduğum linux komutlarının listesi
 
-****************************************************************************
-sudo su : root şifresi tanımlama
+---
 
-. = bulunduğun dizin
+## Genel Bilgilendirme
 
-~ = Home
+* `sudo su` = root şifresi tanımlama
+* `.` = bulunduğun dizin
+* `~` = Home
+* `~/.bashrc` = kullanıcı ile ilgili kofigürasyonların tutulduğu klasör
+* . ile başlayan dosyalar = gizli dosyalar
+* `cd Enter` = go home directory
+* `!` = ardına yazılan komut, geçmişte yazılmışsa en son yazılanını çalıştırır (örnek : !curl)
+* `ls -lh` = dizindeki dosyaları boyutları anlaşılabilecek şekilde listeler
+* `du -h` = dizindeki klasörleri boyutları anlaşılabilecek şekilde listeler
+* `df -h` = harddisk kullanım bilgilerini listeler
+* `lsb_release -a` = işletim sistemi ve distribution ile ilgili bilgileri verir
+* `cat /etc/*release` = işletim sistemi bilgilerini gösterir
+* `lsof -nP | grep '(deleted)'` = silinen ama linkleri kopmayan dosyaları listeler
 
-~/.bashrc = kullanıcı ile ilgili kofigürasyonların tutulduğu klasör
+---
 
-. ile başlayan dosyalar = gizli dosyalar
+### İki dosya metnindeki farkları bulma komutu
 
-cd Enter = go home directory
+`diff /dosyaYolu1 /dosyaYoulu2`
 
-! = ardına yazılan komut, geçmişte yazılmışsa en son yazılanını çalıştırır (örnek : !curl)
+---
 
-ls -lh = dizindeki dosyaları boyutları anlaşılabilecek şekilde listeler
+**Change permissions of files**
 
-du -h = dizindeki klasörleri boyutları anlaşılabilecek şekilde listeler
+* `chmod -R 777 [filename]`
 
-df -h = harddisk kullanım bilgilerini listeler
-
-lsb_release -a = işletim sistemi ve distribution ile ilgili bilgileri verir
-
-cat /etc/*release = işletim sistemi bilgilerini gösterir
-
-lsof -nP | grep '(deleted)' = silinen ama linkleri kopmayan dosyaları listeler
-
-****************************************************************************
-
-İki dosya içeriğindeki farkları bulma komutu
-
-- diff /dosyaYolu1 /dosyaYoulu2
-
-****************************************************************************
-
-Change permissions of files
-
-- chmod -R 777 [filename]
-****************************************************************************
+---
 
 Copy
 
