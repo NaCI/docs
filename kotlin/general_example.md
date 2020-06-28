@@ -60,4 +60,4 @@ while(myBook.weight > 0) {
 }
 ```
 
-### [Go back to Kotlin section](../kotlin)
+**< [Go back to Kotlin section](../kotlin)**

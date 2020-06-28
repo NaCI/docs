@@ -506,4 +506,4 @@ return (
 )
 ```
 
-### [Go to homepage](/)
+**< [Go to homepage](/)**

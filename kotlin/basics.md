@@ -175,4 +175,4 @@ import java.util.Random as JRandom
 : [https://bezkoder.com/kotlin-list-mutable-list/](https://bezkoder.com/kotlin-list-mutable-list/)
 : [https://dzone.com/articles/learning-kotlin-return-when](https://dzone.com/articles/learning-kotlin-return-when)
 
-### [Go back to Kotlin section](../kotlin)
+**< [Go back to Kotlin section](../kotlin)**

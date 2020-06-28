@@ -332,4 +332,4 @@ val (letters, other) = setOf('a', '%', 'r', '}').partitionTo(HashSet(), HashSet(
 : [https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011)
 : [https://winterbe.com/posts/2018/07/23/kotlin-sequence-tutorial/](https://winterbe.com/posts/2018/07/23/kotlin-sequence-tutorial/)
 
-### [Go back to Kotlin section](../kotlin)
+**< [Go back to Kotlin section](../kotlin)**

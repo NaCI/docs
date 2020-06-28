@@ -38,4 +38,4 @@
 - Control + o => overridable method list
 - Cmd + alt + t => surround with
 
-### [Go back to Android section](../android)
+**< [Go back to Android section](../android)**

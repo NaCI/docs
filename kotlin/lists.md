@@ -523,4 +523,4 @@ println(list.distinctBy { it.toUpperCase() }) // [a, b]
 : [https://dzone.com/articles/learning-kotlin-return-when](https://dzone.com/articles/learning-kotlin-return-when)
 : [http://zetcode.com/kotlin/lists/](http://zetcode.com/kotlin/lists/)
 
-### [Go back to Kotlin section](../kotlin)
+**< [Go back to Kotlin section](../kotlin)**

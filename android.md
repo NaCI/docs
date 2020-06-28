@@ -7,4 +7,4 @@
 |[Coroutines](/android/coroutines)|Brief information about usage of coroutines in Android app|
 |[Tests](/android/tests)|General information about tests for Android project|
 
-### [Go to homepage](/)
+**< [Go to homepage](/)**

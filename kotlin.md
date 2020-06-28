@@ -12,4 +12,4 @@
 |[General Example](/kotlin/general_example)|General example which includes of all the information above|
 |[Simple Game](/kotlin/simple_game_example)|Example of simple game written in Kotlin|
 
-### [Go to homepage](/)
+**< [Go to homepage](/)**

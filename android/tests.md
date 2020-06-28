@@ -8,4 +8,4 @@ Tests can be seperated to three main branches.
 
 Our testing strategy should include each of these types.
 
-### [Go back to Android section](../android)
+**< [Go back to Android section](../android)**

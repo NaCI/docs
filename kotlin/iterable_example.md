@@ -65,4 +65,4 @@ fun iterateOverDateRange(firstDate: MyDate, secondDate: MyDate, handler: (MyDate
 }
 ```
 
-### [Go back to Kotlin section](../kotlin)
+**< [Go back to Kotlin section](../kotlin)**

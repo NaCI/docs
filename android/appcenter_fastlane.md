@@ -191,4 +191,4 @@ Check the [link](https://github.com/microsoft/fastlane-plugin-appcenter/blob/mas
 
 [Repository link](https://github.com/NaCI/DeploymentTestApp)
 
-### [Go back to Android section](../android)
+**< [Go back to Android section](../android)**

@@ -204,4 +204,4 @@ val isOdd: Int.() -> Boolean = { this.rem(2) == 0 }
 **REFERENCES**
 : [https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011)
 
-### [Go back to Kotlin section](../kotlin)
+**< [Go back to Kotlin section](../kotlin)**
