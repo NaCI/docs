@@ -24,13 +24,13 @@
 
 ### İki dosya metnindeki farkları bulma komutu
 
-`diff /dosyaYolu1 /dosyaYoulu2`
+> `diff /dosyaYolu1 /dosyaYoulu2`
 
 ---
 
 ### Change permissions of files**
 
-* `chmod -R 777 [filename]`
+> `chmod -R 777 [filename]`
 
 ---
 
@@ -50,236 +50,235 @@
 
 ---
 
-İki işlemi birleştirme " | " operatörü ile yapılır
+### İki işlemi birleştirme " | " operatörü ile yapılır
 
-- ls -la | grep workspace
+> `ls -la | grep workspace`
 
-****************************************************************************
+---
 
-Ağ Bilgisi Alma
+### Ağ Bilgisi Alma
 
-- netcfg
+> `netcfg`
 
-****************************************************************************
+---
 
-Biçimlendirme
+### Biçimlendirme
 
-- önce umount yapılır ardından mkfs yapılır
+> önce `umount` yapılır ardından `mkfs` yapılır
 
-****************************************************************************
+---
 
-Echo kullanımı
+### Echo kullanımı
 
-- "echo String >> PATH" = dosyanın sonuna yazar
+> `echo String >> PATH` = dosyanın sonuna yazar
 
-- "echo String > PATH" = dosyanın üstüne yazar
+> `echo String > PATH` = dosyanın üstüne yazar
 
-****************************************************************************
+---
 
-Path Ekleme
+### Path Ekleme
 
-.bashrc gizli klasörüne path tanımlanır.
+`.bashrc` veya `.zprofile` gizli klasörüne path tanımlanır.
 
-- nano .bashrc
-PATH=~/FoldersPath:$PATH
+> `nano .bashrc`
+
+> export PATH=~/FoldersPath:$PATH <br>
+> export ANDROID_HOME=~/Library/Android/sdk%
 
 bu dosyayı değiştirdikten yapılan değişiklikleri aktifleştirmek için alttaki komut çalıştırılır.
 
-source .bashrc => güncellemeleri yapar
+`source .bashrc` => güncellemeleri yapar
 
-****************************************************************************
+---
 
-Sıkıştırma ve Açma İşlemleri
+### Sıkıştırma ve Açma İşlemleri
 
 x = xpand / c = compress
 
-- tar xfvz FILE.tar.gz
+> `tar xfvz FILE.tar.gz`
 
-- tar xfvj FILE.tar.bz2
+> `tar xfvj FILE.tar.bz2`
 
-- tar cfvz FILE.tar.gz(sıkıştırılacak dosya yolu ve adı) FILE[](sıkıştırılacak dosyalar) FOLDER[](sıkıştırılacak klasörler)
+> `tar cfvz FILE.tar.gz(sıkıştırılacak dosya yolu ve adı) FILE[](sıkıştırılacak dosyalar) FOLDER[](sıkıştırılacak klasörler)`
 
-- tar cfvj FILE.tar.bz2 FILE[] /* daha çok sıkıştırır ama işlem uzun sürer
+> `tar cfvj FILE.tar.bz2 FILE[] /* daha çok sıkıştırır ama işlem uzun sürer`
 
-****************************************************************************
+---
 
-İnternet Paylaşımı
+### İnternet Paylaşımı
 
-- echo 1 > /proc/sys/net/ipv4/ip_forward
+> `echo 1 > /proc/sys/net/ipv4/ip_forward`
 
-- iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+> `iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE`
 
-****************************************************************************
+---
 
-Ağdaki Cihazları ve Portları Tarama
+### Ağdaki Cihazları ve Portları Tarama
 
-- nmap -n 192.168.1.* -p 5555 (ip aralığı verilir, -p port demektir -web erişimi olan cihazlarda genelde 80 portu açıktır-)
+> `nmap -n 192.168.1.* -p 5555` (ip aralığı verilir, -p port demektir -web erişimi olan cihazlarda genelde 80 portu açıktır-)
 
-- nmap -n 192.168.1.* -p 5555 | grep open -B 4
+> `nmap -n 192.168.1.* -p 5555 | grep open -B 4`
 
-****************************************************************************
+---
 
-Ağ Bağlantısı Gateway Atama
+### Ağ Bağlantısı Gateway Atama
 
-- route -n (şu anki ayarlar görülür)
+> `route -n` (şu anki ayarlar görülür)
 
-- route del default gw 192.168.1.1 (default değer silinir)
+> `route del default gw 192.168.1.1` (default değer silinir)
 
-- route add default gw 192.168.1.138 (yeni değer atanır)
+> `route add default gw 192.168.1.138` (yeni değer atanır)
 
-****************************************************************************
+---
 
-DNS Ayarları Değiştirme
+### DNS Ayarları Değiştirme
 
-- nano /etc/resolv.conf
+> `nano /etc/resolv.conf`
 
-****************************************************************************
+---
 
-& işareti
+### & işareti
 
-- Komutun sonuna koyulan & işareti komutu her halükarda sonraki satıra geçirir, komut çalışmaya devam etse bile.
+Komutun sonuna koyulan & işareti komutu her halükarda sonraki satıra geçirir, komut çalışmaya devam etse bile.
 
-****************************************************************************
+---
 
-PS AX Komutu
+### PS AX Komutu
 
-- çalışan süreçleri gösterir
+Çalışan süreçleri gösterir
 
-****************************************************************************
+---
 
-FG Komutu
+### FG Komutu
 
-- durdurulmuş süreçleri ekrana geri getirir
+Durdurulmuş süreçleri ekrana geri getirir
 
-****************************************************************************
+---
 
-Hostname Değiştirme
+### Hostname Değiştirme
 
-- nano /etc/hostname
+> `nano /etc/hostname`
 
-****************************************************************************
+---
 
-Çalıştırılabilir Dosyaların Yollarını Bulma
+### Çalıştırılabilir Dosyaların Yollarını Bulma
 
-- which *(program adı)
+> `which *(program adı)`
 
-- which java
+Örnek kullanım:
+> `which java`
 
-****************************************************************************
+---
 
-Alternatif Kopyalama İşlemi
+### Alternatif Kopyalama İşlemi
 
-- cat (dosya_yolu).(dosya) > (hedef_yol).(dosya)
+> `cat (dosya_yolu).(dosya) > (hedef_yol).(dosya)`
 
-****************************************************************************
+---
 
-Android Cihaz Bilgileri Görme
+### Android Cihaz Bilgileri Görme
 
-usb ile bağlı bulunan cihazın komut satırına girilir ve orada "getprop" komutu çalıştırılır.
+Usb ile bağlı bulunan cihazın komut satırına girilir ve orada "getprop" komutu çalıştırılır.
 
-- adb shell
+> `adb shell`
 
 ardından
+> `getprop`
 
-- getprop
+---
 
-****************************************************************************
+### Dosyaları parçalara bölmek için kullanacağımız komut
 
-Dosyaları parçalara bölmek için kullanacağımız komut
-
-Mesela bir 5480 kb lık mp3 dosyamız olsun.(test.mp3).Bu dosyamızı 1 megabyt’lık parçalara bölelim.
+Mesela bir 5480 kb lık mp3 dosyamız olsun (test.mp3).Bu dosyamızı 1 megabyte’lık parçalara bölelim.
 
 b : byte
+
 1 : dosyamız 1 megabyte lık dosyalara böler..yada (2-3-4) dosya büyüklüğüne göre.
+
 m: megabyte
 
-örnek : split -b1m test.mp3 test.mp3
+Örnek :
+> `split -b1m test.mp3 test.mp3`
 
-Işlem sonunda Dosyalarımız test.mp3as test.mp3ab....şeklinde parçalanacaktır.
+İşlem sonunda Dosyalarımız test.mp3as test.mp3ab....şeklinde parçalanacaktır.
 
-Bu dosyayı tekrar birleştirmek içinse --> cat
+Bu dosyayı tekrar birleştirmek içinse --> `cat` komutunu kullanabiliriz
 
-örnek : cat test.mp3a* > test.mp3
+Örnek :
+> `cat test.mp3a* > test.mp3`
 
-****************************************************************************
+---
 
-En son değisen 10 dosyayi listeleme
+### En son değisen 10 dosyayi listeleme (log dosyalarında kullanılabilir)
 
-- ls -al --sort=time | head -n 10
+> `ls -al --sort=time | head -n 10`
 
-****************************************************************************
+---
 
-Android cihazlara Wireless üzerinden ADB ile bağlanma yetkisi verme
+### Android cihazlara Wireless üzerinden ADB ile bağlanma yetkisi verme
 
-- su
-- setprop service.adb.tcp.port 5555
+> `su`
+> `setprop service.adb.tcp.port 5555`
+> `stop adbd`
+> `start adbd`
+> `netstat` (açık portları görmek için)
 
-- stop adbd
+#### Kablo Takılıysa
 
-- start adbd
+> `adb tcpip 5555`
+> `adb connect 192.168.0.101(device ip):5555(port)`
 
-- netstat (açık portları görmek için)
+---
 
---------------------------------------------
+### Android cihazlarda uygulama başlatma
 
-Kablo Takılıysa
+> `am start -a (Intent)android.intent.action.MAIN -n (package_name)/(class_name)`
 
-- adb tcpip 5555
+---
 
-- adb connect 192.168.0.101(device ip):5555(port)
+### Android cihazların klasörlerine yazma yetkisi verme
 
-****************************************************************************
+> `mount`
+> `mount -o remount,rw /dev/block/mmcblk0p9 /system`
 
-Android cihazlarda uygulama başlatma
+---
 
-- am start -a (Intent)android.intent.action.MAIN -n (package_name)/(class_name)
+### Detaylı Grep Kullanımı
 
-****************************************************************************
+> `grep {aranacak_kelime} -A 30 -B 10` (A: after B: before bulunan satırdan 10 öncesini ve 30 sonrasını gösterir)
 
-Android cihazların klasörlerine yazma yetkisi verme
+---
 
-- mount
+### Apache Start/Stop
 
-- mount -o remount,rw /dev/block/mmcblk0p9 /system
+> `sudo /etc/init.d/apache2 stop (start)`
 
-****************************************************************************
+---
 
-Detaylı Grep Kullanımı
+### MySQL Veritabanında SQL Çalıştırma
 
--grep "aranan_kelime" -A 30 -B 10 (A: after B: before bulunan satırdan 10 öncesini ve 30 sonrasını gösterir)
+> `mysql -u(root_adı) -p(şifre) (tablo_adı) < (sql'in yolu)`
 
-****************************************************************************
+---
 
-Apache Start/Stop
+### KULLANIMDAKİ PORTLARI LİSTELEME
 
-- sudo /etc/init.d/apache2 stop (start)
+> `sudo netstat -tulpn`
 
-****************************************************************************
+---
 
-MySQL Veritabanında SQL Çalıştırma
+### CURL ile HTTP İstekte Bulunma
 
-- mysql -u(root_adı) -p(şifre) (tablo_adı) < (sql'in yolu)
+> `curl --data '{"(key)":(value)}' --referer '{value}' http://127.0.0.1:8080/(class_adı)` //post verileri ile adresten istekte bulunma
 
-****************************************************************************
+> `curl -d "key=value&id=1" --referer "www.google.com" http://127.0.0.1:8080/ServletName/ClassName`
 
-KULLANILAN PORTLARI LİSTELEME
+> `curl -vlkL https://127.0.0.1:8443 --ciphers DHE-RSA-AES256-SHA` //sertifika olmadığı halde; ssl bağlantı üzerinden istekte bulunma
 
-sudo netstat -tulpn
+> `curl -i -X {GET|POST|PUT|DELETE} -H'Content-Type: application/json' -H'Accept: application/json' -d '{"i_app": "12"}' http://127.0.0.1:8080`
+// -X ile istek tipini belirliyoruz. -H ile headerları belirliyoruz, Content-Type : Gönderilecek parametrelerin tipi, Accept : Geri Dönecek Veri Tipi
 
-****************************************************************************
-
-CURL ile İstekte Bulunma
-
-- curl --data '{"(key)":(value)}' --referer '{value}' http://127.0.0.1:8080/(class_adı) /* post verileri ile adresten istekte bulunma */
-
-- curl -d "key=value&id=1" --referer "www.google.com" http://127.0.0.1:8080/ServletName/ClassName
-
-- curl -vlkL https://127.0.0.1:8443 --ciphers DHE-RSA-AES256-SHA /* sertifika olmadığı halde; ssl bağlantı üzerinden istekte bulunma */
-
-- curl -i -X {GET|POST|PUT|DELETE} -H'Content-Type: application/json' -H'Accept: application/json' -d '{"i_app": "12"}' http://127.0.0.1:8080
-/* -X ile istek tipini belirliyoruz. -H ile headerları belirliyoruz, Content-Type : Gönderilecek parametrelerin tipi, Accept : Geri Dönecek Veri Tipi */
-
-****************************************************************************
+---
 
 SSH ile Dosya Kopyalama
 
