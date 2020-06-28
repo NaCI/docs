@@ -4,7 +4,7 @@
 
 ---
 
-## Genel Bilgilendirme
+### Genel Bilgilendirme
 
 * `sudo su` = root şifresi tanımlama
 * `.` = bulunduğun dizin
@@ -28,27 +28,27 @@
 
 ---
 
-**Change permissions of files**
+### Change permissions of files**
 
 * `chmod -R 777 [filename]`
 
 ---
 
-Copy
+### Copy
 
-- cp -rv {nerden} {nereye}
+> `cp -rv {from} {to}`
 
-r option = recursive (klasör kopyalamada kullanılır)
+**r option** = recursive (klasör kopyalamada kullanılır)
 
-v option = ilerlemeyi ekrana bastırır
+**v option** = ilerlemeyi ekrana bastırır
 
-****************************************************************************
+---
 
-Yüklü paketleri listeleme
+### Sistemde Yüklü olan paketleri listeleme
 
-- dpkg -l
+> `dpkg -l`
 
-****************************************************************************
+---
 
 İki işlemi birleştirme " | " operatörü ile yapılır
 
