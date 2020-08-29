@@ -98,6 +98,44 @@ var instantTestExecutorRule = InstantTaskExecutorRule()
 
 ---
 
+## Test Repository Class (Class which have dependencies)
+
+We gonna use **test doubles** for long running tasks like network requests and database queries
+
+Test Doubles
+
+| Name  |Description                                      |
+|-------|-------------------------------------------------|
+| Fake  | A test double that has a "working" implementation of the class, but it's implemented in a way that makes it good for tests but unsuitable for production |
+| Mock  | A test double that tracks which of its methods were called. It then passes or fails a test depending on whether it's methods were called correctly. |
+| Stub  | A test double that includes no logic and only returns what you program it to return. A StubTaskRepository could be programmed to return certain combinations of tasks from getTasks for example. |
+| Dummy | A test double that is passed around but not used, such as if you just need to provide it as a parameter. If you had a DummyTaskRepository, it would just implement the TaskRepository with no code in any of the methods. |
+| Spy   | A test double which also keeps tracks of some additional information; for example, if you made a SpyTaskRepository, it might keep track of the number of times the addTask method was called. |
+
+### Test Coroutines
+
+Repository testleri için coroutine kullanımı gerekiyorsa, bunun için coroutine-test kütüphanesi implemente edilmeli.
+
+**app/build.gradle** altına eklenmeli
+
+```groovy
+testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+```
+
+ve metod çağrısı `runBlockingTest` bloğu altında yapılmalı
+
+```kotlin
+fun getTasks_requestsAllTasksFromRemoteDataSource() = runBlockingTest {
+    // WHEN tasks are requested from the tasks repository
+    val tasks = tasksRepository.getTasks(true) as Result.Success
+
+    // THEN tasks are loaded from the remote data source
+    assertThat(tasks.data, IsEqual(remoteTasks))
+}
+```
+
+ve metodun başına `@ExperimentalCoroutinesApi` annotation'ı eklenmeli.
+
 **REFERENCES**
 : <https://www.udacity.com/course/advanced-android-with-kotlin--ud940#>
 
