@@ -136,6 +136,28 @@ fun getTasks_requestsAllTasksFromRemoteDataSource() = runBlockingTest {
 
 ve metodun başına `@ExperimentalCoroutinesApi` annotation'ı eklenmeli.
 
+## Test UI (via Espresso)
+
+Espresso Components
+
+- Static Espresso Method (e.g onView) [Detail](https://developer.android.com/reference/androidx/test/espresso/Espresso.html#onView%28org.hamcrest.Matcher<android.view.View>%29)
+
+- ViewMatcher (e.g withId, isChekced) [ViewMatcher List](https://developer.android.com/reference/androidx/test/espresso/matcher/ViewMatchers.html)
+
+- ViewAction (e.g click) [ViewAction List](https://developer.android.com/reference/androidx/test/espresso/ViewAction.html)
+
+- ViewAssertion (e.g matches) [ViewAssertion List](https://developer.android.com/reference/androidx/test/espresso/assertion/ViewAssertions#matches)
+
+Test example - Check if checkbox's state turn into checked on click :
+
+```kotlin
+onView(withId(R.id.text_username))
+    .perform(click())
+    .check(matches(isChecked()))
+```
+
+> For espresso UI testing its best practice to turn off animations (From device's developer options menu)
+
 **REFERENCES**
 : <https://www.udacity.com/course/advanced-android-with-kotlin--ud940#>
 
