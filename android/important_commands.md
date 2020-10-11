@@ -1,5 +1,30 @@
 # Important Commands for Android Development
 
+## General
+
+- Son versiyonlu kütüphaneleri arama: [Link](https://androidreposearch.netlify.com)
+- Play services libraries versions: [Link](https://developers.google.com/android/guides/releases)
+- Test server side push notifications: [Link](https://github.com/onmyway133/PushNotifications)
+- Debug Gradle File: [Link](https://docs.gradle.org/current/userguide/img/remote-debug-gradle.gif)
+- Usage of material: [Link](https://medium.com/mindorks/upgrading-to-material-components-ebc21ac4e95a)
+- Room annotations: [Link](https://developer.android.com/reference/androidx/room/package-summary#annotations)
+- SimpleDateFormat: [Link](https://developer.android.com/reference/java/text/SimpleDateFormat)
+- Color Hex to Name: [Link](https://www.color-blindness.com/color-name-hue/) 
+- Compress image files: [Link](https://tinypng.com)
+- Android studio theme: [Plugin](https://plugins.jetbrains.com/plugin/8006-material-theme-ui)
+- Android device screen share with computer: [Link](www.vysor.io)
+- Online markdown editor: [Link](https://dillinger.io)
+- Online Json formatter: [Link](https://jsonformatter.curiousconcept.com)
+- All design pattern samples: [Repo](https://github.com/iluwatar/java-design-patterns)
+- Run android libraries without using android studio: [Dryrun](https://github.com/cesarferreira/dryrun)
+- Get free images : [Unsplash](unsplash.com)
+- Observe app network requests : [Httptoolkit](https://httptoolkit.tech)
+- All languages known from Github : [Link](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
+- Android beginner guide : [Link](https://developers.google.com/android/for-all/vocab-words)
+- Android github library share : [Jitpack](https://jitpack.io)
+- Android gitignore sample : [Github link](https://github.com/github/gitignore)
+- Mock api responses : [mocky.io](https://designer.mocky.io)
+
 ## SHA1 of debug keystore
 
 ``keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android``
@@ -25,8 +50,8 @@
 
 ## Git reflog
 
-> Git reflog
-> Git reflog show {branch_name}
+> Git reflog  
+> Git reflog show {branch_name}  
 > Git reset —hard HEAD@{7}
 
 ## ANDROID STUDIO KISAYOLLAR
