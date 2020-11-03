@@ -158,6 +158,40 @@ onView(withId(R.id.text_username))
 
 > For espresso UI testing its best practice to turn off animations (From device's developer options menu)
 
+## Test Asynchronous Code Block
+
+- Testing async requires determinism and synchronization mechanism
+
+- `runBlockingTest` does this for coroutines
+
+- `runBlockingTest` uses `TestCoroutineDispatcher`
+
+- gradle dependency: `kotlinx-coroutines-test`
+
+## Test Room Database
+
+- Database test usually instrumented (Because of sqlite version differs from devices)
+
+- Write unit tests for DAO
+
+- You can use `inMemoryDatabaseBuilder()` to initialize non-persistent database object for test cases
+
+- Close database after tests
+
+- gradle dependency: `androidTestImplementation "androidx.arch.core:core-testing"`
+
+## End-to-end Tests
+
+Disable these three settings:
+
+- Window animation scale
+
+- Transition animation scale
+
+- Animator duration scale
+
+![Animation Settings](/-images/end_to_end_test_settings.png){:height="50%" width="50%"}
+
 **REFERENCES**
 : <https://www.udacity.com/course/advanced-android-with-kotlin--ud940#>
 
