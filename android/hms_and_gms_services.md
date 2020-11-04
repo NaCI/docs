@@ -82,6 +82,7 @@ import com.google.android.gms.location.*
 
 class LocationHelper @JvmOverloads constructor(
     private val activity: Activity,
+    private val fragment: Fragment? = null,
     private val globalLocationCallback: GlobalLocationCallback,
     private val requestCode: Int = DEFAULT_REQUEST_CODE
 ) : LocationCallback() {
@@ -121,6 +122,20 @@ class LocationHelper @JvmOverloads constructor(
             .addOnFailureListener {
                 if (it is ResolvableApiException) {
                     try {
+                        // Fragment üzerinden çağrı yapıldığında onActivityResult tetiklenebilmesi için startIntentSenderForResult methodu çağrılmalı
+                        fragment?.let {
+                            fragment.startIntentSenderForResult(
+                                locationSettingFailureException.resolution.intentSender,
+                                requestCode,
+                                null,
+                                0,
+                                0,
+                                0,
+                                null
+                            )
+                            return@addOnFailureListener
+                        }
+
                         it.startResolutionForResult(
                             activity,
                             requestCode
@@ -188,6 +203,7 @@ import com.huawei.hms.location.*
 
 class LocationHelper @JvmOverloads constructor(
     private val activity: Activity,
+    private val fragment: Fragment? = null,
     private val globalLocationCallback: GlobalLocationCallback,
     private val requestCode: Int = DEFAULT_REQUEST_CODE
 ) : LocationCallback() {
@@ -227,6 +243,20 @@ class LocationHelper @JvmOverloads constructor(
             .addOnFailureListener {
                 if (it is ResolvableApiException) {
                     try {
+                        // Fragment üzerinden çağrı yapıldığında onActivityResult tetiklenebilmesi için startIntentSenderForResult methodu çağrılmalı
+                        fragment?.let {
+                            fragment.startIntentSenderForResult(
+                                locationSettingFailureException.resolution.intentSender,
+                                requestCode,
+                                null,
+                                0,
+                                0,
+                                0,
+                                null
+                            )
+                            return@addOnFailureListener
+                        }
+
                         it.startResolutionForResult(
                             activity,
                             requestCode
@@ -299,7 +329,7 @@ class DashboardActivity : AppCompatActivity(), LocationHelper.GlobalLocationCall
         super.onCreate(savedInstanceState)
         ...
 
-        locationHelper = LocationHelper(this, this, REQUEST_CHECK_SETTINGS)
+        locationHelper = LocationHelper(activity = this, fragment = null, globalLocationCallback = this, requestCode = REQUEST_CHECK_SETTINGS)
     }
 
     // Result handled after user enables gps
