@@ -24,6 +24,7 @@
 - Android github library share : [Jitpack](https://jitpack.io)
 - Android gitignore sample : [Github link](https://github.com/github/gitignore)
 - Mock api responses : [mocky.io](https://designer.mocky.io)
+- Resource naming standarst : [resourcenaming](https://jeroenmols.com/blog/2016/03/07/resourcenaming/)
 
 ## SHA1 of debug keystore
 
