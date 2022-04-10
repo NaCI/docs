@@ -44,6 +44,16 @@ Certificate Authority (CA) gibi tanımlanıp network trafiği dinlenip arasına 
 
 Son olarak da AndroidManifest dosyasında application tag'i içine `android:networkSecurityConfig="@xml/network_security_configuration"` tanımı yapıyoruz.
 
+## Eklemeler
+
+Detaylı bilgi için aşağıdaki dokümanlar da incelenmeli:
+
+- https://developer.android.com/topic/security/best-practices#trust-manager
+
+- https://developer.android.com/docs/quality-guidelines/core-app-quality#sc
+
+- https://developer.android.com/training/articles/security-gms-provider
+
 **REFERENCES**
 : [https://developer.android.com/training/articles/security-config.html](https://developer.android.com/training/articles/security-config.html)
 : [https://developer.android.com/codelabs/android-network-security-config](https://developer.android.com/codelabs/android-network-security-config)
