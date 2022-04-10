@@ -9,6 +9,17 @@ Certificate Authority (CA) gibi tanımlanıp network trafiği dinlenip arasına 
 
 - Android sertifika değişimlerinde önceki versiyonlara destek verme sorunlarından dolayı **SSL Pinning’i tavsiye etmiyor**. Yapılacaksa da mutlaka bir backup pin değeri de olması gerektiği belirtiliyor.
 
+> Ssl pinning için örnek :
+
+```xml
+<domain-config>
+    <domain includeSubdomains="true">my.secure.domain</domain>
+    <pin-set expiration="2022-11-17">
+        <pin digest="SHA-256">asdaksljdalsdjasdlkjsdlk=</pin>
+    </pin-set>
+</domain-config>
+```
+
 - SSL Pinning yerine, cihazlar sadece sistemde tanımlı sertifika otoritelerine güvenmeye zorlanabilir. Bu durumda araya girmek isteyen zararlı bir yazılım cihaza kendi sertifika otoritesini koysa da bağlantıyı dinleyemiyor. Fakat bu destek android 7 (api 24) ve üzerindeki cihazlar için geçerli. Ayrıca emulator’lere user dışında system sertifikası da kurulabiliyor. Emulatorler için bu güvenlik bypass edilebiliyor.
 
 - Bunu da engelleme için network-security-config altına sadece kendi belirlediğimiz CA’lerin tanımını yapıp uygulamanın sadece bu CA’lere güvenmesini sağlayabiliyoruz. Burada piyasadaki güvenilir birkaç CA bu listeye eklenir ve gelecekteki sertifikalar bu CA’lerden alınırsa sorun çözülmüş oluyor. Yeni bir CA gelmediği sürece force push gerekmiyor. (Benzer çözüm sslpinningde leaf’e değil root’a güvenerek de yapılabilir ama orda tek CA koymuş oluyoruz)

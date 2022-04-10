@@ -26,6 +26,11 @@
 - Mock api responses : [mocky.io](https://designer.mocky.io)
 - Resource naming standarts : [resourcenaming](https://jeroenmols.com/blog/2016/03/07/resourcenaming/)
 - Create or show badges : [shields.io](https://shields.io)
+- AndroidX libraries latest releases : [Link](https://androidx.tech)
+- Online UUID Generator : [Link](https://www.uuidgenerator.net/version4)
+- Test mobile deeplink : [Link](https://halgatewood.com/deeplink/)
+- Proguard playground : [Link](https://playground.proguard.com)
+- Mobile Certificate Pinning Generator : [Link](https://approov.io/tools/static-pinning/)
 
 ## SHA1 of debug keystore
 
