@@ -9,7 +9,7 @@
 - Usage of material: [Link](https://medium.com/mindorks/upgrading-to-material-components-ebc21ac4e95a)
 - Room annotations: [Link](https://developer.android.com/reference/androidx/room/package-summary#annotations)
 - SimpleDateFormat: [Link](https://developer.android.com/reference/java/text/SimpleDateFormat)
-- Color Hex to Name: [Link](https://www.color-blindness.com/color-name-hue/) 
+- Color Hex to Name: [Link](https://www.color-blindness.com/color-name-hue/)
 - Compress image files: [Link](https://tinypng.com)
 - Android studio theme: [Plugin](https://plugins.jetbrains.com/plugin/8006-material-theme-ui)
 - Android device screen share with computer: [Link](www.vysor.io)
